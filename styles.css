@@ -37,7 +37,7 @@
 
 .btn:hover,
 .btn:active {
-  opacity: var(--opacity-value);
+  opacity: 0.9;
 }
 
 /* Header / Hero Styles */
@@ -150,8 +150,8 @@
 }
 
 .pros img {
-  width: 150px;
-  border-radius: 75px;
+  width: 80%;
+  border-radius: 50%;
 }
 
 .pros span {
