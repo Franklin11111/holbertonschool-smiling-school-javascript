@@ -34,7 +34,7 @@
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"
     ></script>
-
+    <script src="scripts.js" defer></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -43,8 +43,8 @@
     />
   </head>
   <body class="body">
-    <header class="header">
-      <div class="container">
+     <header class="header">
+      <div class="container-md">
         <nav class="navbar navbar-expand-sm navbar-dark pt-4 px-0">
           <button
             class="navbar-toggler border-0 align-self-start mt-3"
@@ -107,25 +107,25 @@
             <span>Learn</span> from the pros
           </p>
           <div class="row pros">
-            <div class="col-6 col-md-3 pro1">
+            <div class="col-6 col-sm-3 pro1">
               <img src="images/profile_1.jpg" alt="profile 1" />
               <h3>Phillip Massey</h3>
               <span>« Smile of the year »</span>
               <span>2018 - 2019</span>
             </div>
-            <div class="col-6 col-md-3 pro2">
+            <div class="col-6 col-sm-3 pro2">
               <img src="images/profile_2.jpg" alt="profile 2" />
               <h3>Nannie Lawrence</h3>
               <span>Best « little smile »</span>
               <span>2017</span>
             </div>
-            <div class="col-6 col-md-3 pro3">
+            <div class="col-6 col-sm-3 pro3">
               <img src="images/profile_3.jpg" alt="profile 3" />
               <h3>Bruce Walters</h3>
               <span>Best « Friend Smile »</span>
               <span>live performance 2019</span>
             </div>
-            <div class="col-6 col-md-3 pro4">
+            <div class="col-6 col-sm-3 pro4">
               <img src="images/profile_4.jpg" alt="profile 4" />
               <h3>Henry Hughes</h3>
               <span>« 24h smiles » winner</span>
@@ -137,7 +137,7 @@
     </header>
     <main class="main">
       <section class="quotes section d-flex align-items-center">
-        <div class="container">
+        <div class="container-md">
           <div
             id="carouselExampleControls"
             class="carousel slide"
@@ -145,15 +145,15 @@
           >
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <div class="row mx-auto align-items-center">
-                  <div class="col-12 col-sm-2 col-lg-2 offset-lg-1 text-center">
+                <div class="row mx-auto align-items-center quote1">
+                  <div class="col-12 col-sm-2 col-lg-2 offset-lg-1 text-center ">
                     <img
                       src="images/profile_5.jpg"
                       class="d-block align-self-center"
                       alt="Carousel Pic 1"
                     />
                   </div>
-                  <div class="col-12 col-sm-7 offset-sm-2 col-lg-9 offset-lg-0">
+                  <div class="col-12 col-sm-7 offset-sm-2 col-lg-9 offset-lg-0 ">
                     <div class="quote-text">
                       <p class="text-white">
                         « Those tutorials are concise and go straight to the
@@ -167,7 +167,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="row mx-auto align-items-center">
+                <div class="row mx-auto align-items-center quote2">
                   <div class="col-12 col-sm-2 col-lg-2 offset-lg-1 text-center">
                     <img
                       src="images/profile_5.jpg"
@@ -241,25 +241,571 @@
         </div>
       </section>
       <section class="popular section d-flex align-items-center">
-        <div class="container">
+        <div class="container text-center my-3">
           <header class="section-header">
             <h2 class="text-center">
               Most
               <span class="main-color font-weight-bold">popular</span> tutorials
             </h2>
           </header>
+          <div class="row mx-auto my-auto">
           <div
             id="carouselExampleControls2"
-            class="carousel slide"
+            class="carousel slide w-100"
             data-ride="carousel"
           >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row align-items-center mx-auto">
+            <div class="carousel-inner w-100">
+                <div class="carousel-item active">
                   <div
-                    class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-end justify-content-lg-center"
+                    class="col-md-4"
                   >
-                    <div class="card">
+                    <div class="card card-1">
+                      <img
+                        src="images/thumbnail_4.jpg"
+                        class="card-img-top"
+                        alt="Video thumbnail"
+                      />
+                      <div class="card-img-overlay text-center">
+                        <img
+                          src="images/play.png"
+                          alt="Play"
+                          width="64px"
+                          class="align-self-center play-overlay"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">
+                          Diagonal Smile
+                        </h5>
+                        <p class="card-text text-muted">
+                          Lorem ipsum dolor sit amet, consect adipiscing elit,
+                          sed do eiusmod.
+                        </p>
+                        <div class="creator d-flex align-items-center">
+                          <img
+                            src="images/profile_1.jpg"
+                            alt="Creator of
+                            Video"
+                            width="30px"
+                            class="rounded-circle"
+                          />
+                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                        </div>
+                        <div class="info pt-3 d-flex justify-content-between">
+                          <div class="rating">
+                            <!-- <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_off.png"
+                              alt="star on"
+                              width="15px"
+                            /> -->
+                          </div>
+                          <span class="main-color">8 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="carousel-item">
+                  <div
+                    class="col-md-4"
+                  >
+                    <div class="card card-2">
+                      <img
+                        src="images/thumbnail_3.jpg"
+                        class="card-img-top"
+                        alt="Video thumbnail"
+                      />
+                      <div class="card-img-overlay text-center">
+                        <img
+                          src="images/play.png"
+                          alt="Play"
+                          width="64px"
+                          class="align-self-center play-overlay"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">Sad Smile</h5>
+                        <p class="card-text text-muted">
+                          Lorem ipsum dolor sit amet, consect adipiscing elit,
+                          sed do eiusmod.
+                        </p>
+                        <div class="creator d-flex align-items-center">
+                          <img
+                            src="images/profile_1.jpg"
+                            alt="Creator of
+                            Video"
+                            width="30px"
+                            class="rounded-circle"
+                          />
+                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                        </div>
+                        <div class="info pt-3 d-flex justify-content-between">
+                          <div class="rating">
+                            <!-- <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_off.png"
+                              alt="star on"
+                              width="15px"
+                            /> -->
+                          </div>
+                          <span class="main-color">8 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-3">
+                      <img
+                        src="images/thumbnail_1.jpg"
+                        class="card-img-top"
+                        alt="Video thumbnail"
+                      />
+                      <div class="card-img-overlay text-center">
+                        <img
+                          src="images/play.png"
+                          alt="Play"
+                          width="64px"
+                          class="align-self-center play-overlay"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">
+                          Natural Smile
+                        </h5>
+                        <p class="card-text text-muted">
+                          Lorem ipsum dolor sit amet, consect adipiscing elit,
+                          sed do eiusmod.
+                        </p>
+                        <div class="creator d-flex align-items-center">
+                          <img
+                            src="images/profile_1.jpg"
+                            alt="Creator of
+                            Video"
+                            width="30px"
+                            class="rounded-circle"
+                          />
+                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                        </div>
+                        <div class="info pt-3 d-flex justify-content-between">
+                          <div class="rating">
+                            <!-- <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_off.png"
+                              alt="star on"
+                              width="15px"
+                            /> -->
+                          </div>
+                          <span class="main-color">8 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-4">
+                      <img
+                        src="images/thumbnail_2.jpg"
+                        class="card-img-top"
+                        alt="Video thumbnail"
+                      />
+                      <div class="card-img-overlay text-center">
+                        <img
+                          src="images/play.png"
+                          alt="Play"
+                          width="64px"
+                          class="align-self-center play-overlay"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">Happy Smile</h5>
+                        <p class="card-text text-muted">
+                          Lorem ipsum dolor sit amet, consect adipiscing elit,
+                          sed do eiusmod.
+                        </p>
+                        <div class="creator d-flex align-items-center">
+                          <img
+                            src="images/profile_1.jpg"
+                            alt="Creator of
+                            Video"
+                            width="30px"
+                            class="rounded-circle"
+                          />
+                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                        </div>
+                        <div class="info pt-3 d-flex justify-content-between">
+                          <div class="rating">
+                            <!-- <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_off.png"
+                              alt="star on"
+                              width="15px"
+                            /> -->
+                          </div>
+                          <span class="main-color">8 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                  
+                  </div>
+                
+                  <div class="carousel-item">
+                  <div
+                    class="col-md-4"
+                  >
+                    <div class="card card-5">
+                      <img
+                        src="images/thumbnail_4.jpg"
+                        class="card-img-top"
+                        alt="Video thumbnail"
+                      />
+                      <div class="card-img-overlay text-center">
+                        <img
+                          src="images/play.png"
+                          alt="Play"
+                          width="64px"
+                          class="align-self-center play-overlay"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">
+                          Diagonal Smile
+                        </h5>
+                        <p class="card-text text-muted">
+                          Lorem ipsum dolor sit amet, consect adipiscing elit,
+                          sed do eiusmod.
+                        </p>
+                        <div class="creator d-flex align-items-center">
+                          <img
+                            src="images/profile_1.jpg"
+                            alt="Creator of
+                            Video"
+                            width="30px"
+                            class="rounded-circle"
+                          />
+                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                        </div>
+                        <div class="info pt-3 d-flex justify-content-between">
+                          <div class="rating">
+                            <!-- <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_off.png"
+                              alt="star on"
+                              width="15px"
+                            /> -->
+                          </div>
+                          <span class="main-color">8 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="carousel-item">
+                  <div
+                    class="col-md-4"
+                  >
+                    <div class="card card-6">
+                      <img
+                        src="images/thumbnail_3.jpg"
+                        class="card-img-top"
+                        alt="Video thumbnail"
+                      />
+                      <div class="card-img-overlay text-center">
+                        <img
+                          src="images/play.png"
+                          alt="Play"
+                          width="64px"
+                          class="align-self-center play-overlay"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">Sad Smile</h5>
+                        <p class="card-text text-muted">
+                          Lorem ipsum dolor sit amet, consect adipiscing elit,
+                          sed do eiusmod.
+                        </p>
+                        <div class="creator d-flex align-items-center">
+                          <img
+                            src="images/profile_1.jpg"
+                            alt="Creator of
+                            Video"
+                            width="30px"
+                            class="rounded-circle"
+                          />
+                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                        </div>
+                        <div class="info pt-3 d-flex justify-content-between">
+                          <div class="rating">
+                            <!-- <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_off.png"
+                              alt="star on"
+                              width="15px"
+                            /> -->
+                          </div>
+                          <span class="main-color">8 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-7">
+                      <img
+                        src="images/thumbnail_1.jpg"
+                        class="card-img-top"
+                        alt="Video thumbnail"
+                      />
+                      <div class="card-img-overlay text-center">
+                        <img
+                          src="images/play.png"
+                          alt="Play"
+                          width="64px"
+                          class="align-self-center play-overlay"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">
+                          Natural Smile
+                        </h5>
+                        <p class="card-text text-muted">
+                          Lorem ipsum dolor sit amet, consect adipiscing elit,
+                          sed do eiusmod.
+                        </p>
+                        <div class="creator d-flex align-items-center">
+                          <img
+                            src="images/profile_1.jpg"
+                            alt="Creator of
+                            Video"
+                            width="30px"
+                            class="rounded-circle"
+                          />
+                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                        </div>
+                        <div class="info pt-3 d-flex justify-content-between">
+                          <div class="rating">
+                            <!-- <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_off.png"
+                              alt="star on"
+                              width="15px"
+                            /> -->
+                          </div>
+                          <span class="main-color">8 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-8">
+                      <img
+                        src="images/thumbnail_2.jpg"
+                        class="card-img-top"
+                        alt="Video thumbnail"
+                      />
+                      <div class="card-img-overlay text-center">
+                        <img
+                          src="images/play.png"
+                          alt="Play"
+                          width="64px"
+                          class="align-self-center play-overlay"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">Happy Smile</h5>
+                        <p class="card-text text-muted">
+                          Lorem ipsum dolor sit amet, consect adipiscing elit,
+                          sed do eiusmod.
+                        </p>
+                        <div class="creator d-flex align-items-center">
+                          <img
+                            src="images/profile_1.jpg"
+                            alt="Creator of
+                            Video"
+                            width="30px"
+                            class="rounded-circle"
+                          />
+                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                        </div>
+                        <div class="info pt-3 d-flex justify-content-between">
+                          <div class="rating">
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                            <img
+                              src="images/star_off.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                          </div>
+                          <span class="main-color">8 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="carousel-item">
+                  <div
+                    class="col-md-4"
+                  >
+                    <div class="card card-9">
                       <img
                         src="images/thumbnail_4.jpg"
                         class="card-img-top"
@@ -324,10 +870,12 @@
                       </div>
                     </div>
                   </div>
+                  </div>
+                  <div class="carousel-item">
                   <div
-                    class="col-sm-6 col-md-6 col-lg-3 d-none d-sm-flex justify-content-md-start justify-content-lg-center"
+                    class="col-md-4"
                   >
-                    <div class="card">
+                    <div class="card card-10">
                       <img
                         src="images/thumbnail_3.jpg"
                         class="card-img-top"
@@ -390,8 +938,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3 d-none d-lg-flex justify-content-center">
-                    <div class="card">
+                  </div>
+                  <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-11">
                       <img
                         src="images/thumbnail_1.jpg"
                         class="card-img-top"
@@ -456,8 +1006,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3 d-none d-lg-flex justify-content-center">
-                    <div class="card">
+                  </div>
+                  <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-12">
                       <img
                         src="images/thumbnail_2.jpg"
                         class="card-img-top"
@@ -520,545 +1072,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row align-items-center mx-auto">
-                  <div
-                    class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-end justify-content-lg-center"
-                  >
-                    <div class="card">
-                      <img
-                        src="images/thumbnail_4.jpg"
-                        class="card-img-top"
-                        alt="Video thumbnail"
-                      />
-                      <div class="card-img-overlay text-center">
-                        <img
-                          src="images/play.png"
-                          alt="Play"
-                          width="64px"
-                          class="align-self-center play-overlay"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
-                          Diagonal Smile
-                        </h5>
-                        <p class="card-text text-muted">
-                          Lorem ipsum dolor sit amet, consect adipiscing elit,
-                          sed do eiusmod.
-                        </p>
-                        <div class="creator d-flex align-items-center">
-                          <img
-                            src="images/profile_1.jpg"
-                            alt="Creator of
-                            Video"
-                            width="30px"
-                            class="rounded-circle"
-                          />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
-                        </div>
-                        <div class="info pt-3 d-flex justify-content-between">
-                          <div class="rating">
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_off.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                          </div>
-                          <span class="main-color">8 min</span>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  <div
-                    class="col-sm-6 col-md-6 col-lg-3 d-none d-sm-flex justify-content-md-start justify-content-lg-center"
-                  >
-                    <div class="card">
-                      <img
-                        src="images/thumbnail_3.jpg"
-                        class="card-img-top"
-                        alt="Video thumbnail"
-                      />
-                      <div class="card-img-overlay text-center">
-                        <img
-                          src="images/play.png"
-                          alt="Play"
-                          width="64px"
-                          class="align-self-center play-overlay"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Sad Smile</h5>
-                        <p class="card-text text-muted">
-                          Lorem ipsum dolor sit amet, consect adipiscing elit,
-                          sed do eiusmod.
-                        </p>
-                        <div class="creator d-flex align-items-center">
-                          <img
-                            src="images/profile_1.jpg"
-                            alt="Creator of
-                            Video"
-                            width="30px"
-                            class="rounded-circle"
-                          />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
-                        </div>
-                        <div class="info pt-3 d-flex justify-content-between">
-                          <div class="rating">
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_off.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                          </div>
-                          <span class="main-color">8 min</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 d-none d-lg-flex justify-content-center">
-                    <div class="card">
-                      <img
-                        src="images/thumbnail_1.jpg"
-                        class="card-img-top"
-                        alt="Video thumbnail"
-                      />
-                      <div class="card-img-overlay text-center">
-                        <img
-                          src="images/play.png"
-                          alt="Play"
-                          width="64px"
-                          class="align-self-center play-overlay"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
-                          Natural Smile
-                        </h5>
-                        <p class="card-text text-muted">
-                          Lorem ipsum dolor sit amet, consect adipiscing elit,
-                          sed do eiusmod.
-                        </p>
-                        <div class="creator d-flex align-items-center">
-                          <img
-                            src="images/profile_1.jpg"
-                            alt="Creator of
-                            Video"
-                            width="30px"
-                            class="rounded-circle"
-                          />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
-                        </div>
-                        <div class="info pt-3 d-flex justify-content-between">
-                          <div class="rating">
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_off.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                          </div>
-                          <span class="main-color">8 min</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 d-none d-lg-flex justify-content-center">
-                    <div class="card">
-                      <img
-                        src="images/thumbnail_2.jpg"
-                        class="card-img-top"
-                        alt="Video thumbnail"
-                      />
-                      <div class="card-img-overlay text-center">
-                        <img
-                          src="images/play.png"
-                          alt="Play"
-                          width="64px"
-                          class="align-self-center play-overlay"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Happy Smile</h5>
-                        <p class="card-text text-muted">
-                          Lorem ipsum dolor sit amet, consect adipiscing elit,
-                          sed do eiusmod.
-                        </p>
-                        <div class="creator d-flex align-items-center">
-                          <img
-                            src="images/profile_1.jpg"
-                            alt="Creator of
-                            Video"
-                            width="30px"
-                            class="rounded-circle"
-                          />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
-                        </div>
-                        <div class="info pt-3 d-flex justify-content-between">
-                          <div class="rating">
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_off.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                          </div>
-                          <span class="main-color">8 min</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row align-items-center mx-auto">
-                  <div
-                    class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-end justify-content-lg-center"
-                  >
-                    <div class="card">
-                      <img
-                        src="images/thumbnail_4.jpg"
-                        class="card-img-top"
-                        alt="Video thumbnail"
-                      />
-                      <div class="card-img-overlay text-center">
-                        <img
-                          src="images/play.png"
-                          alt="Play"
-                          width="64px"
-                          class="align-self-center play-overlay"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
-                          Diagonal Smile
-                        </h5>
-                        <p class="card-text text-muted">
-                          Lorem ipsum dolor sit amet, consect adipiscing elit,
-                          sed do eiusmod.
-                        </p>
-                        <div class="creator d-flex align-items-center">
-                          <img
-                            src="images/profile_1.jpg"
-                            alt="Creator of
-                            Video"
-                            width="30px"
-                            class="rounded-circle"
-                          />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
-                        </div>
-                        <div class="info pt-3 d-flex justify-content-between">
-                          <div class="rating">
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_off.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                          </div>
-                          <span class="main-color">8 min</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="col-sm-6 col-md-6 col-lg-3 d-none d-sm-flex justify-content-md-start justify-content-lg-center"
-                  >
-                    <div class="card">
-                      <img
-                        src="images/thumbnail_3.jpg"
-                        class="card-img-top"
-                        alt="Video thumbnail"
-                      />
-                      <div class="card-img-overlay text-center">
-                        <img
-                          src="images/play.png"
-                          alt="Play"
-                          width="64px"
-                          class="align-self-center play-overlay"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Sad Smile</h5>
-                        <p class="card-text text-muted">
-                          Lorem ipsum dolor sit amet, consect adipiscing elit,
-                          sed do eiusmod.
-                        </p>
-                        <div class="creator d-flex align-items-center">
-                          <img
-                            src="images/profile_1.jpg"
-                            alt="Creator of
-                            Video"
-                            width="30px"
-                            class="rounded-circle"
-                          />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
-                        </div>
-                        <div class="info pt-3 d-flex justify-content-between">
-                          <div class="rating">
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_off.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                          </div>
-                          <span class="main-color">8 min</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 d-none d-lg-flex justify-content-center">
-                    <div class="card">
-                      <img
-                        src="images/thumbnail_1.jpg"
-                        class="card-img-top"
-                        alt="Video thumbnail"
-                      />
-                      <div class="card-img-overlay text-center">
-                        <img
-                          src="images/play.png"
-                          alt="Play"
-                          width="64px"
-                          class="align-self-center play-overlay"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
-                          Natural Smile
-                        </h5>
-                        <p class="card-text text-muted">
-                          Lorem ipsum dolor sit amet, consect adipiscing elit,
-                          sed do eiusmod.
-                        </p>
-                        <div class="creator d-flex align-items-center">
-                          <img
-                            src="images/profile_1.jpg"
-                            alt="Creator of
-                            Video"
-                            width="30px"
-                            class="rounded-circle"
-                          />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
-                        </div>
-                        <div class="info pt-3 d-flex justify-content-between">
-                          <div class="rating">
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_off.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                          </div>
-                          <span class="main-color">8 min</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 d-none d-lg-flex justify-content-center">
-                    <div class="card">
-                      <img
-                        src="images/thumbnail_2.jpg"
-                        class="card-img-top"
-                        alt="Video thumbnail"
-                      />
-                      <div class="card-img-overlay text-center">
-                        <img
-                          src="images/play.png"
-                          alt="Play"
-                          width="64px"
-                          class="align-self-center play-overlay"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Happy Smile</h5>
-                        <p class="card-text text-muted">
-                          Lorem ipsum dolor sit amet, consect adipiscing elit,
-                          sed do eiusmod.
-                        </p>
-                        <div class="creator d-flex align-items-center">
-                          <img
-                            src="images/profile_1.jpg"
-                            alt="Creator of
-                            Video"
-                            width="30px"
-                            class="rounded-circle"
-                          />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
-                        </div>
-                        <div class="info pt-3 d-flex justify-content-between">
-                          <div class="rating">
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_on.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                            <img
-                              src="images/star_off.png"
-                              alt="star on"
-                              width="15px"
-                            />
-                          </div>
-                          <span class="main-color">8 min</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </div>            
             <a
               class="carousel-control-prev arrow-left"
               href="#carouselExampleControls2"
@@ -1085,6 +1100,7 @@
               />
               <span class="sr-only">Next</span>
             </a>
+          </div>
           </div>
         </div>
       </section>
