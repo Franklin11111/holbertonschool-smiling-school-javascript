@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     queryQuotes();
     function displayLoading(loading) {
-        const caruselItem = $(".carousel-item:first");
+        const caruselItem = $(".carousel-inner");
         if (loading) {
             $(".carousel-item").css('visibility', 'hidden');
           caruselItem.before('<div class="loader"></div>');
@@ -79,10 +79,7 @@ function queryTutorials() {
       dataType: 'json'
   })
   .done((json) => {
-    console.log(json);
-    // $($('#carouselExampleControls2 .card').get(0)).find('.card-img-top')
-    // .attr("src", json[0].thumb_url);
-    //$('.card-1 .card-title').text(json[0].title);
+    
     console.log($($('#carouselExampleControls2 .card').get(0)).find('.card-img-top'))
     for(let i = 0; i < json.length; i++) {
       $($('#carouselExampleControls2 .card').get(i)).find('.card-img-top')
@@ -109,6 +106,7 @@ function queryTutorials() {
         $($('#carouselExampleControls2 .card').get(i)).find('.rating').append(startImg)
       }
      }
+     displayLoading(false);
   })
   .fail((xhr, status, errorThrown) => {
       console.log(`Error: ${errorThrown}`);
