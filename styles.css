@@ -983,9 +983,14 @@
         flex: 0 0 (100%/3);
   }
 }
-#carouselExampleControls3 .carousel-item {
-  display: block;
+@media screen and (max-width: 576px) {
+  #carouselExampleControls3 .carousel-item {
+        display: block;
+        margin-right: 0;
+        flex: 0 0 (100%);
+  }
 }
+
 #carouselExampleControls2 .carousel-inner,
 #carouselExampleControls3 .carousel-inner {
   padding: 1em;

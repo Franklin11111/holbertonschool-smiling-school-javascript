@@ -72,6 +72,11 @@ if(window.matchMedia("(min-width: 576px)").matches) {
         }
     });
 
+}else if (window.matchMedia("(max-width: 576px)").matches){
+   // $(multipleItemCarousel).addClass('slide');
+}
+
+if(window.matchMedia("(min-width: 576px)").matches) {  
     // -----------------------
     const carousel3 = new bootstrap.Carousel(multipleItemCarousel3, {
         interval: false
@@ -100,8 +105,7 @@ if(window.matchMedia("(min-width: 576px)").matches) {
         }
     });
 }else if (window.matchMedia("(max-width: 576px)").matches){
-    // $(multipleItemCarousel).addClass('slide');
-    // $(multipleItemCarousel3).addClass('slide');
+    //$(multipleItemCarousel3).addClass('slide');
 }
 
 
