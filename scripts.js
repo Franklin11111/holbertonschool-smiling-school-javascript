@@ -42,28 +42,38 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
+const multipleItemCarousel = document.querySelector("#carouselExampleControls2");
+if(window.matchMedia("(min-width: 576px)").matches) {
+  const carousel = new bootstrap.Carousel(multipleItemCarousel, {
+        interval: false
+    });
+  let carouselWidth = $("#carouselExampleControls2 .carousel-inner")[0].scrollWidth;
+  let cardWidth = $("#carouselExampleControls2 .carousel-item").width();
+  let scrollPosition = 0;
+  const nextBtn = document.querySelector('#carouselExampleControls2 .carousel-control-next.arrow-right')
 
-$('#carouselExampleControls2').carousel({
-  interval: 10000
-})
-
-$('#carouselExampleControls2 .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
-        
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
+  nextBtn.addEventListener('click', () => {
+        if(scrollPosition < (carouselWidth - (cardWidth * 4))) {
+        scrollPosition = scrollPosition + cardWidth;
+        $("#carouselExampleControls2 .carousel-inner").animate({scrollLeft: scrollPosition}, 600);
+        } else {
+          scrollPosition = scrollPosition + cardWidth;
+        $("#carouselExampleControls2 .carousel-inner").animate({scrollLeft: scrollPosition}, 600);
+        }
+    });
+    $('#carouselExampleControls2 .carousel-control-prev.arrow-left').on('click', function() {
+        if(scrollPosition > 0) {
+        scrollPosition = scrollPosition - cardWidth;
+        $("#carouselExampleControls2 .carousel-inner").animate({scrollLeft: scrollPosition}, 600);
+        } else {
+          scrollPosition = scrollPosition - cardWidth;
+        $("#carouselExampleControls2 .carousel-inner").animate({scrollLeft: scrollPosition}, 600);
+        }
+    });
+}
+else if (window.matchMedia("(max-width: 576px)").matches){
+    $(multipleItemCarousel).addClass('slide');
+}
 
 // Query tutorials
 function queryTutorials() {
@@ -82,7 +92,7 @@ function queryTutorials() {
     
     console.log($($('#carouselExampleControls2 .card').get(0)).find('.card-img-top'))
     for(let i = 0; i < json.length; i++) {
-      $($('#carouselExampleControls2 .card').get(i)).find('.card-img-top')
+      $($('#carouselExampleControls2 .card').get(i)).find('._card-img-top')
         .attr("src", json[i].thumb_url);
       $($('#carouselExampleControls2 .card').get(i)).find('.card-title')
         .text(json[i].title);
