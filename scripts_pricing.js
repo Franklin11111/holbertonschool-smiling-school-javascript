@@ -53,6 +53,7 @@ $(document).ready(function() {
             topic: topics,
             sort: sortBy
         };
+        displayLoading(true);
         $.ajax({
             url: 'https://smileschool-api.hbtn.info/courses',
             data: dataObj,
@@ -111,71 +112,11 @@ $(document).ready(function() {
                 </div>
               </div>
             </div>
-                    `       
-                    
+                    `         
                 });
                 $(".section.results .row").append(html); 
-            }  
-            console.log(courses);
-            if (dataObj.topic != 'ALL') {
-                console.log(dataObj.topic)
-                let html = '';
-            //    $.each(json.courses, (index, obj) => {
-            //     if(obj.topic === dataObj.topic) {
-            //         console.log(dataObj.topic)
-            //         html += `
-            //             <div class="col-12 col-sm-4 col-lg-3 d-flex justify-content-center">
-            //   <div class="card">
-            //     <img
-            //       src=${obj['thumb_url']}
-            //       class="card-img-top"
-            //       alt="Video thumbnail"
-            //     />
-            //     <div class="card-img-overlay text-center">
-            //       <img
-            //         src="images/play.png"
-            //         alt="Play"
-            //         width="64px"
-            //         class="align-self-center play-overlay"
-            //       />
-            //     </div>
-            //     <div class="card-body">
-            //       <h5 class="card-title font-weight-bold">${obj['title']}</h5>
-            //       <p class="card-text text-muted">
-            //         ${obj['sub-title']}
-            //       </p>
-            //       <div class="creator d-flex align-items-center">
-            //         <img
-            //           src=${obj['author_pic_url']}
-            //           alt="Creator of
-            //           Video"
-            //           width="30px"
-            //           class="rounded-circle"
-            //         />
-            //         <h6 class="pl-3 m-0 main-color">${obj['author']}</h6>
-            //       </div>
-            //       <div class="info pt-3 d-flex justify-content-between">
-            //         <div class="rating">
-            //           Rating: ${obj.star} <img
-            //                   src="images/star_on.png"
-            //                   alt="star on"
-            //                   width="15px"
-            //                 />
-            //         </div>
-            //         <span class="main-color">${obj['duration']}</span>
-            //       </div>
-            //     </div>
-            //   </div>
-            // </div>
-            //         `
-            //     } else {
-            //         console.log(dataObj.topic);
-            //         console.log(obj.topic);
-            //     }
-
-            //    });
-            //    $(".section.results .row").append(html); 
-            }              
+                displayLoading(false);
+            }             
         })
         .fail((xhr, status, errorThrown) => {
             console.log(`Error: ${errorThrown}`);
@@ -190,6 +131,7 @@ $(document).ready(function() {
             format: 'json',
             topic: topics,
         };
+        displayLoading(true);
         $.ajax({
             url: 'https://smileschool-api.hbtn.info/courses',
             data: dataObj,
@@ -257,6 +199,7 @@ $(document).ready(function() {
 
                });
                $(".section.results .row").append(html); 
+               displayLoading(false);
             }              
         })
         .fail((xhr, status, errorThrown) => {
@@ -272,6 +215,7 @@ $(document).ready(function() {
             format: 'json',
             sort: sortBy,
         };
+        displayLoading(true);
         $.ajax({
             url: 'https://smileschool-api.hbtn.info/courses',
             data: dataObj,
@@ -366,6 +310,7 @@ $(document).ready(function() {
             }
             $(".section.results .row").empty();
             $(".section.results .row").append(sortedItems);
+            displayLoading(false);
         })
         .fail((xhr, status, errorThrown) => {
             console.log(`Error: ${errorThrown}`);
@@ -391,6 +336,17 @@ $(document).ready(function() {
             return '';
         }
     }
+
+    function displayLoading(loading) {
+        const caruselItem = $(".carousel-inner");
+        if (loading) {
+            $(".section.results .row .card").css('visibility', 'hidden');
+          $(".section.results .row").append('<div class="loader"></div>');
+        } else {
+          $(".loader").remove();
+          $(".section.results .row .card").css('visibility', 'visible');
+        }
+      }
 
     queryQuotes();
     $(".section.search .search-text-area").on('keypress', (e) => {
