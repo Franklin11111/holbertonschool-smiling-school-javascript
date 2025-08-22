@@ -64,7 +64,6 @@ $(document).ready(function() {
             const courses = json.courses;
             const searchedCourses = searchCourses(json.courses, dataObj.q);
             if (searchedCourses) {
-                console.log(searchedCourses);
                 $(".section.results .video-count").text(`${searchedCourses.length} videos`)
                 let html = '';                
                 $.each(searchedCourses, (index, obj) => {
@@ -140,13 +139,10 @@ $(document).ready(function() {
         })
         .done((json) => {
             const courses = json.courses;            
-            console.log(courses);
             if (dataObj.topic != 'ALL') {
-                console.log(dataObj.topic)
                 let html = '';
                $.each(courses, (index, obj) => {
                 if(obj.topic === dataObj.topic) {
-                    console.log(dataObj.topic)
                     html += `
                         <div class="col-12 col-sm-4 col-lg-3 d-flex justify-content-center">
               <div class="card">
@@ -193,10 +189,8 @@ $(document).ready(function() {
             </div>
                     `
                 } else {
-                    console.log(dataObj.topic);
                     console.log(obj.topic);
                 }
-
                });
                $(".section.results .row").append(html); 
                displayLoading(false);
@@ -224,7 +218,6 @@ $(document).ready(function() {
         })
         .done((json) => {
             const courses = json.courses;            
-            console.log(courses);            
             let html = '';
             $.each(courses, (index, obj) => {                
                  html += `
@@ -277,15 +270,11 @@ $(document).ready(function() {
             $(".section.results .row").append(html);           
             let sortedItems = [];
             if(sortBy === "Most Popular"){
-                console.log(sortBy);
                 const items = $(".section.results .row .card");
                 sortedItems = items.toArray().sort(function(a, b){
                     let valA = parseInt($(a).data('views'));
                     let valB = parseInt($(b).data('views'));
                     return valB - valA;
-                });
-                $.each(sortedItems, (i, o) => {
-                    console.log($(o));
                 });
             } else if (sortBy === "Most Recent") {
                 const items = $(".section.results .row .card");
@@ -294,18 +283,12 @@ $(document).ready(function() {
                     let valB = parseInt($(b).data('published'));
                     return valB - valA;
                 });
-                $.each(sortedItems, (i, o) => {
-                    console.log(new Date(parseInt(o.dataset.published)));
-                });
             } else if (sortBy === "Most Viewed") {
                 const items = $(".section.results .row .card");
                 sortedItems = items.toArray().sort(function(a, b){
                     let valA = parseInt($(a).data('star'));
                     let valB = parseInt($(b).data('star'));
                     return valB - valA;
-                });
-                $.each(sortedItems, (i, o) => {
-                    console.log(parseInt(o.dataset.star));
                 });
             }
             $(".section.results .row").empty();
@@ -324,9 +307,7 @@ $(document).ready(function() {
         $.each(dataArr, (index, obj) => {
             const text = searchTxt.toLowerCase();
             const keywords = obj['keywords'].map((entry) => entry.toLowerCase());
-            //console.log(keywords);
             if(keywords.includes(text)){
-                console.log(keywords);
                 newDataArr.push(obj)
             }
         });
