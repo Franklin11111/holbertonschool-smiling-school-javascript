@@ -266,6 +266,94 @@ $(document).ready(function() {
         });
     }
 
+    function sortCourses(sortBy) {
+        const dataObj = {
+            action: 'query',
+            format: 'json',
+            sort: sortBy,
+        };
+        $.ajax({
+            url: 'https://smileschool-api.hbtn.info/courses',
+            data: dataObj,
+            type: 'GET',
+            dataType: 'json'
+        })
+        .done((json) => {
+            const courses = json.courses;            
+            console.log(courses);            
+            let html = '';
+            $.each(courses, (index, obj) => {                
+                 html += `
+                        <div class="col-12 col-sm-4 col-lg-3 d-flex justify-content-center">
+              <div class="card" data-views="${obj.views}">
+                <img
+                  src=${obj['thumb_url']}
+                  class="card-img-top"
+                  alt="Video thumbnail"
+                />
+                <div class="card-img-overlay text-center">
+                  <img
+                    src="images/play.png"
+                    alt="Play"
+                    width="64px"
+                    class="align-self-center play-overlay"
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">${obj['title']}</h5>
+                  <p class="card-text text-muted">
+                    ${obj['sub-title']}
+                  </p>
+                  <div class="creator d-flex align-items-center">
+                    <img
+                      src=${obj['author_pic_url']}
+                      alt="Creator of
+                      Video"
+                      width="30px"
+                      class="rounded-circle"
+                    />
+                    <h6 class="pl-3 m-0 main-color">${obj['author']}</h6>
+                  </div>
+                  <div class="info pt-3 d-flex justify-content-between">
+                    <div class="rating">
+                      Rating: ${obj.star} <img
+                              src="images/star_on.png"
+                              alt="star on"
+                              width="15px"
+                            />
+                    </div>
+                    <span class="main-color">${obj['duration']}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+                 `
+            });
+            $(".section.results .row").append(html);
+            
+            
+            if(sortBy === "Most Popular"){
+                console.log(sortBy);
+                const items = $(".section.results .row .card");
+                let sortedItems = items.toArray().sort(function(a, b){
+                    let valA = parseInt($(a).data('views'));
+                    let valB = parseInt($(b).data('views'));
+                    return valB - valA;
+                });
+                $.each(sortedItems, (i, o) => {
+                    console.log($(o.dataset));
+                })
+                $(".section.results .row").empty();
+                $(".section.results .row").append(sortedItems);
+            }
+        })
+        .fail((xhr, status, errorThrown) => {
+            console.log(`Error: ${errorThrown}`);
+            console.log(`Status: ${status}`);
+            console.dir(xhr);
+        });
+    }
+
     function searchCourses(dataArr, searchTxt) {
         const newDataArr = [];
         $.each(dataArr, (index, obj) => {
@@ -290,12 +378,19 @@ $(document).ready(function() {
             $(".section.results .row").empty();
             queryCourses($(".section.search .search-text-area").val());
         }
-    } )
+    } );
 
     $(".section.search .dropdown1 .dropdown-item").each(function () {
         $(this).on('click', () => {
             $(".section.results .row").empty();
             filterCourses($(this).text());            
         })
-    })      
+    });
+    
+    $(".section.search .dropdown2 .dropdown-item").each(function () {
+        $(this).on('click', () => {
+            $(".section.results .row").empty();
+            sortCourses($(this).text());
+        })
+    });
 })
