@@ -285,7 +285,8 @@ $(document).ready(function() {
             $.each(courses, (index, obj) => {                
                  html += `
                         <div class="col-12 col-sm-4 col-lg-3 d-flex justify-content-center">
-              <div class="card" data-views="${obj.views}">
+              <div class="card" data-views="${obj.views}" data-published="${obj['published_at']}"
+              data-star="${obj.star}">
                 <img
                   src=${obj['thumb_url']}
                   class="card-img-top"
@@ -329,23 +330,42 @@ $(document).ready(function() {
             </div>
                  `
             });
-            $(".section.results .row").append(html);
-            
-            
+            $(".section.results .row").append(html);           
+            let sortedItems = [];
             if(sortBy === "Most Popular"){
                 console.log(sortBy);
                 const items = $(".section.results .row .card");
-                let sortedItems = items.toArray().sort(function(a, b){
+                sortedItems = items.toArray().sort(function(a, b){
                     let valA = parseInt($(a).data('views'));
                     let valB = parseInt($(b).data('views'));
                     return valB - valA;
                 });
                 $.each(sortedItems, (i, o) => {
-                    console.log($(o.dataset));
-                })
-                $(".section.results .row").empty();
-                $(".section.results .row").append(sortedItems);
+                    console.log($(o));
+                });
+            } else if (sortBy === "Most Recent") {
+                const items = $(".section.results .row .card");
+                sortedItems = items.toArray().sort(function(a, b){
+                    let valA = parseInt($(a).data('published'));
+                    let valB = parseInt($(b).data('published'));
+                    return valB - valA;
+                });
+                $.each(sortedItems, (i, o) => {
+                    console.log(new Date(parseInt(o.dataset.published)));
+                });
+            } else if (sortBy === "Most Viewed") {
+                const items = $(".section.results .row .card");
+                sortedItems = items.toArray().sort(function(a, b){
+                    let valA = parseInt($(a).data('star'));
+                    let valB = parseInt($(b).data('star'));
+                    return valB - valA;
+                });
+                $.each(sortedItems, (i, o) => {
+                    console.log(parseInt(o.dataset.star));
+                });
             }
+            $(".section.results .row").empty();
+            $(".section.results .row").append(sortedItems);
         })
         .fail((xhr, status, errorThrown) => {
             console.log(`Error: ${errorThrown}`);
